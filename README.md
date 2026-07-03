@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Jaanu ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#111;
+    font-family:Arial, Helvetica, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+/* Loading Screen */
+
+#loading{
+    position:fixed;
+    inset:0;
+    background:#111;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+#loading h1{
+    font-size:42px;
+    color:#ff6fa5;
+    margin-bottom:15px;
+}
+
+#loading p{
+    font-size:20px;
+    opacity:.8;
+}
+
+/* Main */
+
+#main{
+    display:none;
+    text-align:center;
+    width:100%;
+    padding:20px;
+    animation:fadeIn 1s ease;
+}
+
+h2{
+    color:white;
+    font-size:34px;
+    margin-bottom:25px;
+}
+
+img{
+    width:95%;
+    max-width:700px;
+    border-radius:18px;
+    box-shadow:0 10px 35px rgba(255,255,255,.18);
+}
+
+button{
+    margin-top:30px;
+    padding:16px 40px;
+    font-size:20px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    background:#ff4f8b;
+    color:white;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    background:#ff2f74;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="loading">
+<h1>❤️ Happy Birthday Jaanu ❤️</h1>
+<p>Loading your surprise...</p>
+</div>
+
+<div id="main">
+
+<h2>❤️ Happy Birthday Jaanu ❤️</h2>
+
+<img src="poster.jpg" alt="Birthday Poster">
+
+<br>
+
+<button onclick="playMusic()">
+▶ Play Music
+</button>
+
+<audio id="music" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<script>
+
+setTimeout(function(){
+
+document.getElementById("loading").style.display="none";
+document.getElementById("main").style.display="block";
+
+},2500);
+
+function playMusic(){
+
+let music=document.getElementById("music");
+
+music.play();
+
+document.querySelector("button").innerHTML="🎵 Playing...";
+document.querySelector("button").disabled=true;
+
+}
+
+</script>
+
+</body>
+</html>
